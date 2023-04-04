@@ -13,7 +13,7 @@ pipeline {
 	stage ('Compile Maven') {
             steps {
 		script {
-                	def mvnHome = tool name: 'maven3', type: 'maven'
+                	def mvnHome = tool name: 'maven3.8', type: 'maven'
                 	sh "${mvnHome}/bin/mvn clean package"
                 	sh 'mv target/javaparser-maven-sample-1.0-SNAPSHOT.jar target/app1.jar'
             	}
